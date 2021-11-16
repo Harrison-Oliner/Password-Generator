@@ -18,10 +18,18 @@ var userArray = [];
 uppercaseArray [1]
 //-----------------------------------------------------------------
   var numCharacter = prompt ("How much number of Character you want between 8 and 128?");
+  if(numCharacter < 8 || numCharacter > 128) {
+    alert("Please enter value from 8 to 128")
+    generatePassword();
+  }
   var numbers = confirm ("you want numbers in your password?");
   var uppercases = confirm ("you want Uppercases in your password?");
   var lowercases = confirm ("you want lowercases in your password?");
   var characters = confirm ("you want special characters in your password?");
+  if(!numbers && !uppercases && !lowercases && !characters) {
+    alert("Pick at least one set of characters")
+    generatePassword();
+  }
 
 
 // condition of the array
